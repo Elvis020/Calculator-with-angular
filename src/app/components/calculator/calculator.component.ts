@@ -44,6 +44,8 @@ export class CalculatorComponent implements OnInit {
         return this.firstOperand *= secondNum;
       case '/':
         return this.firstOperand /= secondNum;
+      case '%':
+        return this.firstOperand %= secondNum;
       case '=':
         return secondNum;
     }
