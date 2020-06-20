@@ -1,142 +1,170 @@
 <!DOCTYPE html>
 <html lang="en-US">
   <body>
-    <div class="container" style="display: grid;" >
+    <div class="container" style="display: grid;">
       <div class="row saleh">
-        <div
-        >
-          <form
-          style = "
-          border: 2px black solid;
-          margin-top: 40%;
-          "
-            name="form"
-
-          >
+        <div>
+          <form style="border: 2px black solid; margin-top: 40%;" name="form">
             <!-- panel for the calc -->
 
             <input
               class="form-control"
               id="panel"
               name="panel"
-              placeholder="0."
+              [value]="currentNumber"
               disabled
-            /><br />
+            />
+            <br />
 
             <!-- User Input Buttons for the calc -->
 
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn7"
-              value="7"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn8"
-              value="8"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn9"
-              value="9"
-            />
-            <input
-              class="form-group btn btn-danger bttn"
-              type="button"
-              name="bttnplus"
-              value="+"
-            /><br />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn4"
-              value="4"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn5"
-              value="5"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn6"
-              value="6"
-            />
-            <input
-              class="form-group btn btn-danger bttn"
-              type="button"
-              name="bttnminus"
-              value="-"
-            /><br />
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn7"
+            (click)="getNumber('7')"
+            value="7"> 7
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn8"
+            (click)="getNumber('8')"
+            value="8"> 8
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn9"
+            (click)="getNumber('9')"
+            value="9"> 9
+            </button >
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttnplus"
+            (click)="getOperation('+')"
+            value="+"> +
+            </button >
+            <br />
 
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn1"
-              value="1"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn2"
-              value="2"
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn3"
-              value="3"
-            />
-            <input
-              class="form-group btn btn-danger bttn"
-              type="button"
-              name="bttnmulti"
-              value="*"
-            /><br />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttndot"
-              value="."
-            />
-            <input
-              class="form-group btn btn-default bttn"
-              type="button"
-              name="bttn0"
-              value="0"
-            />
-            <input
-              class="form-group btn btn-danger bttn"
-              type="button"
-              name="bttnmod"
-              value="%"
-            />
-            <input
-              class="form-group btn btn-danger bttn"
-              type="button"
-              name="bttndiv"
-              value="/"
-            /><br />
+
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn4"
+            (click)="getNumber('4')"
+            value="4"> 4
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn5"
+            (click)="getNumber('5')"
+            value="5"> 5
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn6"
+            (click)="getNumber('6')"
+            value="6"> 6
+            </button >
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttnminus"
+            (click)="getOperation('-')"
+            value="-"> -
+            </button >
+            <br />
+
+
+
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn1"
+            (click)="getNumber('1')"
+            value="1"> 1
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn2"
+            (click)="getNumber('2')"
+            value="2"> 2
+            </button >
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn3"
+            (click)="getNumber('3')"
+            value="3"> 3
+            </button >
+
+
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttnmulti"
+            value="*"
+            (click)="getOperation('*')"
+            value="*"> *
+            </button >
+            <br />
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttndot"
+            value="."
+            (click)="getDecimal()"
+            value="."> .
+            </button >
+
+
+
+            <button
+            class="form-group btn btn-default bttn"
+            type="button"
+            name="bttn0"
+            (click)="getNumber('0')"
+            value="0"> 0
+            </button >
+
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttnmod"
+            (click)="getOperation('%')"
+            value="%"> %
+            </button >
+
+            <button
+            class="form-group btn btn-danger bttn"
+            type="button"
+            name="bttndiv"
+            (click)="getOperation('/')"
+            value="/"> /
+            </button >
+            <br />
 
             <!-- calling new reset function -->
-            <input
-              class="form-group btn btn-info bttn bttne"
-              type="button"
-              name="bttnclear"
-              value="CE"
-            />
+            <button
+            class="form-group btn btn-info bttn bttne"
+            type="button"
+            name="bttnclear"
+            (click)="clear()"
+            value="all-clear"> CE
+            </button >
 
-            <input
-              class="form-group btn btn-success bttn bttne"
-              type="button"
-              name="bttnEQL"
-              value="="
-            />
+            <button
+            class="form-group btn btn-success bttn bttne"
+            type="button"
+            name="bttnEQL"
+            (click)="getOperation('=')"
+            value="="> =
+            </button >
           </form>
         </div>
       </div>
